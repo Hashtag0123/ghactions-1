@@ -9,11 +9,13 @@ jobs:
     - name: checkout repo
       uses: actions/checkout@v4
 
-    - name: Welcome! Message 
-      run:  echo "This is My First Github Actions Job"
+    - name: Welcome & Read Message 
+      run: |
+       echo "This is My First Github Actions Job"
+       ls -lart
+       cat README.md
 
-    - name: Read Files
-      run: ls -lart
+    - name: Generate ASCII Artwork
+      run: cowsay -f crow "Run for cover, I am a CROW...kakaka" >> crow.txt
 
-    - name: Read file
-      run: cat README.md
+
