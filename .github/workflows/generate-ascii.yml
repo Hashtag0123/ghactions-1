@@ -14,4 +14,4 @@ jobs:
               run: ls -lart
 
             - name: execute shell script
-              run: .github/workflows ./ascii-script.sh
+              run: .github/workflows/./ascii-script.sh
