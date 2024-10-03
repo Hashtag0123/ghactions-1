@@ -8,12 +8,12 @@ jobs:
     steps: 
     - name: checkout repo
       uses: actions/checkout@v4
-      
+
     - name: Welcome! Message 
       run:  echo "This is My First Github Actions Job"
 
     - name: Read Files
       run: ls -lart
 
-    - name: 
-      run: cat READ.md
+    - name: Read file
+      run: cat README.md
