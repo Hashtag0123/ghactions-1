@@ -11,6 +11,9 @@ jobs:
             - name: Echo Docker Details
               run: echo docker info
 
+            - name: Run images
+              run: docker run hello-world
+
     deploy-on-windows:
         runs-on: windows-latest
         steps:
