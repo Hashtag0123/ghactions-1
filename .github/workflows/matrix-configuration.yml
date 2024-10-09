@@ -7,9 +7,17 @@ on:
 jobs:
     deploy:
         strategy:
+          fail-fast: false
+          max-parallel: 2                                        # max-parallel will controll the number of parallel jobs running 
           matrix:
             os: [ubuntu-latest, ubuntu-20.04, windows-latest]
             images: [hello-world, alpine]
+            exclude:                                              # To remove specific configurations defined in the matrix, use "exclude"
+              - images: alpine
+                os: windows-latest
+            include:                                              # To add new specific configurations in the matrix, use "include"
+              - images: amd64/alpine
+                os: ubuntu-20.04
         runs-on: ${{ matrix.os}}
         steps:
             - name: Echo Docker Details
